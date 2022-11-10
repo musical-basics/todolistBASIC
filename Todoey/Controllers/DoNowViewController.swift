@@ -141,9 +141,13 @@ class DoNowViewController: UITableViewController {
             }
         }
         
-        let newItem = Item()
-        newItem.title = "Placeholder"
-        itemArray.append(newItem)
+        if itemArray.count == 0 {
+            let newItem = Item()
+            newItem.title = "Placeholder"
+            itemArray.append(newItem)
+        } else {
+            saveItems()
+        }
     }
 
 

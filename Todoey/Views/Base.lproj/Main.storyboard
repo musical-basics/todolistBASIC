@@ -92,6 +92,11 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="sml-q4-wuz">
+                        <barButtonItem key="leftBarButtonItem" title="View entire list" id="h1r-gX-zZA">
+                            <connections>
+                                <segue destination="MV4-Kb-PdF" kind="show" id="H4K-9n-BaA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QdQ-wF-Erd">
                             <connections>
                                 <action selector="addButtonSmashed:" destination="nFX-fN-nnp" id="rl2-aq-PRW"/>
@@ -123,6 +128,9 @@
             <point key="canvasLocation" x="1127.536231884058" y="-498.21428571428567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="H4K-9n-BaA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

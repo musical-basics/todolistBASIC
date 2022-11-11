@@ -71,6 +71,7 @@ class DoNowViewController: UITableViewController {
         itemArray.remove(at: indexPath.row)
         
         
+        
         if itemArray.count == 0 {
             let newItem = Item()
             newItem.title = "Placeholder"
@@ -81,6 +82,15 @@ class DoNowViewController: UITableViewController {
         
         
 //        tableView.reloadData()
+        
+        let alert = UIAlertController(title: "Task Completed.", message: "", preferredStyle: .alert)
+        
+        present(alert, animated: true, completion: nil)
+//        alert.dismiss(animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            alert.dismiss(animated: true, completion: nil)
+        })
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

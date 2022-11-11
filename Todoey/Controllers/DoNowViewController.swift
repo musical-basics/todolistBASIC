@@ -11,10 +11,12 @@ import UIKit
 class DoNowViewController: UITableViewController {
 
     var itemArray = [Item]()
-    
+    var saveItemArray = [Item]()
     
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
+    let saveFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ItemsSave.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +46,6 @@ class DoNowViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DoNowItemCell", for: indexPath)
         
         
-        
         let item = itemArray[indexPath.row]
         
         cell.textLabel?.text = item.title
@@ -66,7 +67,9 @@ class DoNowViewController: UITableViewController {
         
 //        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
+        saveItemArray.append(itemArray[indexPath.row])
         itemArray.remove(at: indexPath.row)
+        
         
         if itemArray.count == 0 {
             let newItem = Item()
@@ -90,8 +93,6 @@ class DoNowViewController: UITableViewController {
         var textField = UITextField()
 
         let alert = UIAlertController(title: "Edit Current Item", message: "", preferredStyle: .alert)
-
-
         let action = UIAlertAction(title: "Edit This Item", style: .default) { (action) in
 
 //            let newItem = Item()
@@ -100,13 +101,7 @@ class DoNowViewController: UITableViewController {
             newItem.title = textField.text!
 
             self.itemArray[0] = newItem
-
-
-
-
             self.saveItems()
-
-
         }
 
         alert.addTextField { (alertTextField) in
@@ -174,6 +169,15 @@ class DoNowViewController: UITableViewController {
             print("error encoding item array")
         }
         
+        
+        //MARK: SAVED ITEMS
+        do{
+            let data = try encoder.encode(saveItemArray)
+            try data.write(to: saveFilePath!)
+        } catch {
+            print("error encoding item array")
+        }
+        
         self.tableView.reloadData()
     }
     
@@ -183,6 +187,16 @@ class DoNowViewController: UITableViewController {
             let decoder = PropertyListDecoder()
             do{
                 itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("error decoding")
+            }
+        }
+        
+        //MARK: SAVED ITEMS
+        if let data = try? Data(contentsOf: saveFilePath!) {
+            let decoder = PropertyListDecoder()
+            do{
+                saveItemArray = try decoder.decode([Item].self, from: data)
             } catch {
                 print("error decoding")
             }

@@ -97,11 +97,18 @@
                                 <segue destination="MV4-Kb-PdF" kind="show" id="H4K-9n-BaA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QdQ-wF-Erd">
-                            <connections>
-                                <action selector="addButtonSmashed:" destination="nFX-fN-nnp" id="rl2-aq-PRW"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="QdQ-wF-Erd">
+                                <connections>
+                                    <action selector="addButtonSmashed:" destination="nFX-fN-nnp" id="rl2-aq-PRW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="EDIT" id="BIN-yF-pYD">
+                                <connections>
+                                    <action selector="editTopCell:" destination="nFX-fN-nnp" id="KHA-c2-PF2"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>

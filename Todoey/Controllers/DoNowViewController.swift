@@ -27,7 +27,7 @@ class DoNowViewController: UITableViewController {
         
         
         
-//        print(dataFilePath)
+        
 
         
         loadItems()
@@ -81,6 +81,49 @@ class DoNowViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
+    @IBAction func editTopCell(_ sender: UIBarButtonItem) {
+        
+//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first)
+     
+        var textField = UITextField()
+
+        let alert = UIAlertController(title: "Edit Current Item", message: "", preferredStyle: .alert)
+
+
+        let action = UIAlertAction(title: "Edit This Item", style: .default) { (action) in
+
+//            let newItem = Item()
+            
+            let newItem = self.itemArray[0]
+            newItem.title = textField.text!
+
+            self.itemArray[0] = newItem
+
+
+
+
+            self.saveItems()
+
+
+        }
+
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = self.itemArray[0].title
+
+
+            textField = alertTextField
+
+        }
+
+        alert.addAction(action)
+
+
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     @IBAction func addButtonSmashed(_ sender: UIBarButtonItem) {
         

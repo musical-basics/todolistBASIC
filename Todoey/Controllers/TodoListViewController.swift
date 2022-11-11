@@ -42,6 +42,9 @@ class TodoListViewController: UITableViewController {
         
         cell.accessoryType = item.done == true ? .checkmark : .none
         
+        cell.textLabel?.numberOfLines = 0;
+        cell.textLabel?.lineBreakMode = .byWordWrapping;
+        
         return cell
         
     }
@@ -54,7 +57,9 @@ class TodoListViewController: UITableViewController {
         
 //        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
-        itemArray.remove(at: indexPath.row)
+//        itemArray.remove(at: indexPath.row)
+        
+        
         
         saveItems()
         

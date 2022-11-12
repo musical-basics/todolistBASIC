@@ -69,6 +69,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iao-dh-ZL7">
+                            <rect key="frame" x="0.0" y="110.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoNowItemCell" id="Jlt-X7-D4R">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -84,17 +91,11 @@
                             <outlet property="delegate" destination="nFX-fN-nnp" id="bEE-x0-yoB"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="QHe-4b-efe">
-                            <connections>
-                                <action selector="addButtonClicked:" destination="nFX-fN-nnp" id="ctC-bN-NaS"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="sml-q4-wuz">
-                        <barButtonItem key="leftBarButtonItem" title="View entire list" id="h1r-gX-zZA">
+                        <barButtonItem key="leftBarButtonItem" title="View 2 Items" id="h1r-gX-zZA">
                             <connections>
-                                <segue destination="MV4-Kb-PdF" kind="show" id="H4K-9n-BaA"/>
+                                <action selector="showTwoItemsPressed:" destination="nFX-fN-nnp" id="9CU-Qr-aog"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -111,6 +112,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="iao-dh-ZL7" id="P4t-t1-uJl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeK-4x-53B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,9 +139,6 @@
             <point key="canvasLocation" x="1127.536231884058" y="-498.21428571428567"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="H4K-9n-BaA"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

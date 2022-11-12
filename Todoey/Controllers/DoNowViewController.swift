@@ -12,7 +12,8 @@ class DoNowViewController: UITableViewController {
 
     var itemArray = [Item]()
     var saveItemArray = [Item]()
-    
+    var numItemsShown = 1
+    @IBOutlet weak var scoreLabel: UILabel!
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
@@ -33,13 +34,14 @@ class DoNowViewController: UITableViewController {
 
         
         loadItems()
+        scoreLabel.text = String(saveItemArray.count)
         // Do any additional setup after loading the view.
     }
 
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return numItemsShown
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +81,7 @@ class DoNowViewController: UITableViewController {
         } else {
             saveItems()
         }
+        
         
         
 //        tableView.reloadData()
@@ -188,6 +191,8 @@ class DoNowViewController: UITableViewController {
             print("error encoding item array")
         }
         
+        
+        scoreLabel.text = String(saveItemArray.count)
         self.tableView.reloadData()
     }
     
@@ -222,5 +227,29 @@ class DoNowViewController: UITableViewController {
     }
 
 
+    
+    //MARK: SHOW 2 ITEMS
+    
+    @IBAction func showTwoItemsPressed(_ sender: UIBarButtonItem) {
+        if numItemsShown == 1 {
+            
+            numItemsShown = 2
+            self.tableView.reloadData()
+            
+        } else {
+            numItemsShown = 1
+            self.tableView.reloadData()
+        }
+            
+        
+    }
+    
+    
 
+    
+    
+    
+    
+    
+    
 }

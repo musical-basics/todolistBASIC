@@ -13,8 +13,8 @@ class DoNowViewController: UITableViewController {
     var itemArray = [Item]()
     var saveItemArray = [Item]()
     var numItemsShown = 1
-    @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var scoreLabel2: UILabel!
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     let saveFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ItemsSave.plist")
@@ -34,7 +34,9 @@ class DoNowViewController: UITableViewController {
 
         
         loadItems()
-        scoreLabel.text = String(saveItemArray.count)
+        
+        //MARK: SCORE LABEL SHOW
+        scoreLabel2.text = String(saveItemArray.count)
         // Do any additional setup after loading the view.
     }
 
@@ -49,6 +51,8 @@ class DoNowViewController: UITableViewController {
         
         
         let item = itemArray[indexPath.row]
+        
+//        let item = itemArray[itemArray.count - 1]
         
         cell.textLabel?.text = item.title
         
@@ -192,7 +196,8 @@ class DoNowViewController: UITableViewController {
         }
         
         
-        scoreLabel.text = String(saveItemArray.count)
+//        scoreLabel.text = String(saveItemArray.count)
+        
         self.tableView.reloadData()
     }
     

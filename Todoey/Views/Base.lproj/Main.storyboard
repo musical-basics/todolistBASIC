@@ -109,6 +109,11 @@
                                     <action selector="editTopCell:" destination="nFX-fN-nnp" id="KHA-c2-PF2"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="EDIT 2" id="vrz-XV-3AD">
+                                <connections>
+                                    <action selector="editNum2:" destination="nFX-fN-nnp" id="xKw-t4-D8P"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

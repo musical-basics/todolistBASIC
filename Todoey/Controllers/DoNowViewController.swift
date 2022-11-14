@@ -137,6 +137,48 @@ class DoNowViewController: UITableViewController {
     }
     
     
+    @IBAction func editNum2(_ sender: UIBarButtonItem) {
+        
+
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Edit Current Item", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Edit This Item", style: .default) { (action) in
+            
+            let newItem = self.itemArray[1]
+            newItem.title = textField.text!
+            
+            self.itemArray[1] = newItem
+            self.saveItems()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = self.itemArray[1].title
+            
+            
+            textField = alertTextField
+            
+        }
+        
+        alert.addAction(action)
+        
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func addButtonSmashed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()

@@ -196,7 +196,7 @@ class DoNowViewController: UITableViewController {
         }
         
         
-//        scoreLabel.text = String(saveItemArray.count)
+        scoreLabel2.text = String(saveItemArray.count)
         
         self.tableView.reloadData()
     }

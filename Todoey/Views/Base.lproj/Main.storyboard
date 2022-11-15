@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,11 +94,18 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sml-q4-wuz">
-                        <barButtonItem key="leftBarButtonItem" title="View 2 Items" id="h1r-gX-zZA">
-                            <connections>
-                                <action selector="showTwoItemsPressed:" destination="nFX-fN-nnp" id="9CU-Qr-aog"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="View 2 Items" id="h1r-gX-zZA">
+                                <connections>
+                                    <action selector="showTwoItemsPressed:" destination="nFX-fN-nnp" id="9CU-Qr-aog"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="View 2nd Page" id="PKB-oO-VKT">
+                                <connections>
+                                    <segue destination="BVr-vP-X8J" kind="show" id="UYC-Xl-dop"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="QdQ-wF-Erd">
                                 <connections>
@@ -125,6 +133,49 @@
             </objects>
             <point key="canvasLocation" x="2037.68115942029" y="-498.21428571428567"/>
         </scene>
+        <!--Second Page View Controller-->
+        <scene sceneID="HAW-Dg-vm0">
+            <objects>
+                <viewController id="BVr-vP-X8J" customClass="SecondPageViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SSf-UI-VXF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2nd Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-WV-Cyg">
+                                <rect key="frame" x="150" y="143" width="114" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Item of Current List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFu-aV-6q2">
+                                <rect key="frame" x="71" y="219" width="288" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFj-fK-wcb">
+                                <rect key="frame" x="44" y="511" width="312" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="View Saved List Array">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="MV4-Kb-PdF" kind="show" id="yGJ-A5-Kx1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="210-Le-GgD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1hl-uf-Pfc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cnd-tC-7l8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3286" y="-506"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="R5E-A3-qRi">
             <objects>
@@ -144,6 +195,9 @@
             <point key="canvasLocation" x="1127.536231884058" y="-498.21428571428567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yGJ-A5-Kx1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

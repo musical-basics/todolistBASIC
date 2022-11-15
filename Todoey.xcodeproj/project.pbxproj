@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442C1AC229233FB0001DC2B9 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C1AC129233FB0001DC2B9 /* SecondPageViewController.swift */; };
 		446F4EFB291D45E700F1D9BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446F4EFA291D45E700F1D9BF /* Item.swift */; };
 		446F4F01291D4BA100F1D9BF /* DoNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446F4F00291D4BA100F1D9BF /* DoNowViewController.swift */; };
 		EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BE4F9239524DB00FB933B /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442C1AC129233FB0001DC2B9 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		446F4EFA291D45E700F1D9BF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		446F4F00291D4BA100F1D9BF /* DoNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoNowViewController.swift; sourceTree = "<group>"; };
 		EB2BE4F6239524DB00FB933B /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,7 @@
 			children = (
 				EB2BE4FD239524DB00FB933B /* TodoListViewController.swift */,
 				446F4F00291D4BA100F1D9BF /* DoNowViewController.swift */,
+				442C1AC129233FB0001DC2B9 /* SecondPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				446F4EFB291D45E700F1D9BF /* Item.swift in Sources */,
 				446F4F01291D4BA100F1D9BF /* DoNowViewController.swift in Sources */,
 				EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */,
+				442C1AC229233FB0001DC2B9 /* SecondPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
